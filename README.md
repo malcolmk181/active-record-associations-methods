@@ -43,21 +43,21 @@ through`][], [`belongs_to`][]. They helped us associate `songs`, `genres`, and
 [`belongs_to`]: http://guides.rubyonrails.org/association_basics.html#the-belongs-to-association
 
 ```ruby
-class Song < Active Record::Base
+class Song < ActiveRecord::Base
   belongs_to :artist
   belongs_to :genre
 end
 ```
 
 ```ruby
-class Artist < Active Record::Base
+class Artist < ActiveRecord::Base
   has_many :songs
   has_many :genres, through: :songs
 end
 ```
 
 ```ruby
-class Genre < Active Record::Base
+class Genre < ActiveRecord::Base
   has_many :songs
   has_many :artists, through: :songs
 end
